@@ -45,6 +45,8 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Player\StoryPlayerStep.cs" />
+    <Compile Include="Player\StoryPlayerStepStatus.cs" />
     <Compile Include="StoryModel\Actor.cs" />
     <Compile Include="Recorder\BotRecorder.cs" />
     <Compile Include="Recorder\IBaseActorRecorder.cs" />
