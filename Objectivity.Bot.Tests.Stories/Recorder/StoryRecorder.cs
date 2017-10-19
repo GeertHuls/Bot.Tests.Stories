@@ -1,6 +1,6 @@
 ﻿namespace Objectivity.Bot.Tests.Stories.Recorder
 {
-    using Objectivity.Bot.Tests.Stories.Stories;
+    using StoryModel;
 
     public class StoryRecorder : IStoryRecorder
     {

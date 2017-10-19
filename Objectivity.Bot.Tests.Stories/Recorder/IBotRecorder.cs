@@ -8,5 +8,7 @@
         IStoryRecorder ListsOptions(Predicate<JObject> listPredicate = null);
 
         IStoryRecorder ListsOptionsIncluding(params string[] options);
+
+        IStoryRecorder SaysSomethingLike(string pattern);
     }
 }

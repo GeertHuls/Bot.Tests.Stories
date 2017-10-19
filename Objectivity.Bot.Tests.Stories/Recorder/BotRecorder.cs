@@ -3,7 +3,7 @@
     using System;
     using System.Linq;
     using Newtonsoft.Json.Linq;
-    using Objectivity.Bot.Tests.Stories.Stories;
+    using StoryModel;
 
     internal class BotRecorder : IBotRecorder
     {
@@ -39,6 +39,12 @@
         public IStoryRecorder Says(string text)
         {
             this.storyRecorder.Story.AddStoryFrame(new BotStoryFrame(ComparisonType.TextExact, text));
+            return this.storyRecorder;
+        }
+
+        public IStoryRecorder SaysSomethingLike(string pattern)
+        {
+            this.storyRecorder.Story.AddStoryFrame(new BotStoryFrame(ComparisonType.TextMatchRegex, pattern));
             return this.storyRecorder;
         }
     }

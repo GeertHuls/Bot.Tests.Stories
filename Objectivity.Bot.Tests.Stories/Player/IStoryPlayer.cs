@@ -2,7 +2,7 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
-    using Objectivity.Bot.Tests.Stories.Stories;
+    using StoryModel;
 
     public interface IStoryPlayer
     {
