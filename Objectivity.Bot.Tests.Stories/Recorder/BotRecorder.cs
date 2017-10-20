@@ -1,6 +1,7 @@
 ﻿namespace Objectivity.Bot.Tests.Stories.Recorder
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using Newtonsoft.Json.Linq;
     using StoryModel;
@@ -36,15 +37,32 @@
             return this.storyRecorder;
         }
 
-        public IStoryRecorder Says(string text)
+        public IStoryRecorder Says(string text, IList<KeyValuePair<string, object>> suggestions)
         {
-            this.storyRecorder.Story.AddStoryFrame(new BotStoryFrame(ComparisonType.TextExact, text));
+            this.storyRecorder.Story.AddStoryFrame(
+                new BotStoryFrame(
+                    ComparisonType.TextExactWithSuggestions,
+                    text,
+                    suggestions: suggestions));
+
             return this.storyRecorder;
         }
 
-        public IStoryRecorder SaysSomethingLike(string pattern)
+        public IStoryRecorder SaysSomethingLike(string pattern, IList<KeyValuePair<string, object>> suggestions = null)
         {
-            this.storyRecorder.Story.AddStoryFrame(new BotStoryFrame(ComparisonType.TextMatchRegex, pattern));
+            this.storyRecorder.Story.AddStoryFrame(
+                new BotStoryFrame(
+                    suggestions == null ? ComparisonType.TextMatchRegex : ComparisonType.TextMatchRegexWithSuggestions,
+                    pattern,
+                    suggestions: suggestions));
+
+            return this.storyRecorder;
+        }
+
+        public IStoryRecorder Says(string text)
+        {
+            this.storyRecorder.Story.AddStoryFrame(new BotStoryFrame(ComparisonType.TextExact, text));
+
             return this.storyRecorder;
         }
     }

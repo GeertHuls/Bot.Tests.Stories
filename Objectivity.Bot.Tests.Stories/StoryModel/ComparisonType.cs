@@ -9,5 +9,9 @@
         AttachmentListPresent,
 
         Option,
+
+        TextExactWithSuggestions,
+
+        TextMatchRegexWithSuggestions,
     }
 }
