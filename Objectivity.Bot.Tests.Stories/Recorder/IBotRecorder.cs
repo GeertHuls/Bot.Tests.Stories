@@ -13,6 +13,6 @@
 
         IStoryRecorder SaysSomethingLike(string pattern, IList<KeyValuePair<string, object>> suggestions = null);
 
-        IStoryRecorder Says(string pattern, IList<KeyValuePair<string, object>> suggestions = null);
+        IStoryRecorder Says(string pattern, IList<KeyValuePair<string, object>> suggestions);
     }
 }
