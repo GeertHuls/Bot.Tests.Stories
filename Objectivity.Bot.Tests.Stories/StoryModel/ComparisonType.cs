@@ -13,5 +13,7 @@
         TextExactWithSuggestions,
 
         TextMatchRegexWithSuggestions,
+
+        Predicate,
     }
 }

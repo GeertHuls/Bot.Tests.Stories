@@ -2,12 +2,15 @@
 {
     using System;
     using System.Collections.Generic;
-
+    using System.Linq.Expressions;
+    using Microsoft.Bot.Connector;
     using Newtonsoft.Json.Linq;
 
     public interface IBotRecorder : IBaseActorRecorder
     {
         IStoryRecorder ListsOptions(Predicate<JObject> listPredicate = null);
+
+        IStoryRecorder SendsActivity(Predicate<IMessageActivity> predicate);
 
         IStoryRecorder ListsOptionsIncluding(params string[] options);
 

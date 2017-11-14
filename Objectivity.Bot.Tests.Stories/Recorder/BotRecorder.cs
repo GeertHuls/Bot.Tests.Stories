@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Microsoft.Bot.Connector;
     using Newtonsoft.Json.Linq;
     using StoryModel;
 
@@ -62,6 +63,13 @@
         public IStoryRecorder Says(string text)
         {
             this.storyRecorder.Story.AddStoryFrame(new BotStoryFrame(ComparisonType.TextExact, text));
+
+            return this.storyRecorder;
+        }
+
+        public IStoryRecorder SendsActivity(Predicate<IMessageActivity> predicate)
+        {
+            this.storyRecorder.Story.AddStoryFrame(new BotStoryFrame(ComparisonType.Predicate, messageActivityPredicate: predicate));
 
             return this.storyRecorder;
         }
