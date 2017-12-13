@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Objectivity.Bot.Tests.Stories", "Objectivity.Bot.Tests.Stories\Objectivity.Bot.Tests.Stories.csproj", "{0DB09617-28A9-4AF8-9F90-68BDC9CF7433}"
 EndProject
